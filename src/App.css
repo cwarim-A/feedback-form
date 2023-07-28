@@ -12,10 +12,25 @@
 }
 .textarea > textarea{
   outline: none;
-  background-color: rgb(214, 206, 206);
+  background-color: rgb(95, 87, 87);
   padding: 15px;
   border-radius: 5px;
   margin-top: 35px;
+}
+.textarea > .username{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.username > .input-text{
+  font-size: 19px;
+}
+.username > input{
+  padding: 10px;
+  background-color: rgb(95, 87, 87);;
+  outline: none;
+  border: none;
+  border-radius: 5px;
 }
 
 .textarea > button{
@@ -34,14 +49,7 @@
   font-size: 19px;
 }
 
-/* .card{
-  box-shadow: rgba(50, 50, 93, 0);
-  width: 100%;
-  height: 30%;
-  background-color: aliceblue; 
-  border-radius: 15px;
-  margin-top: 25px;   
-} */
+
 
  .feedback-item{
   display: flex;
@@ -51,10 +59,12 @@
   text-align: left;
   margin-top: 25px;
   margin-bottom: 25px;
+  color: black;
 }
 
 .feedback-item > p{
   font-size: 19px;
+  color: black;
 }
 
 

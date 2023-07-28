@@ -5,11 +5,13 @@ import './App.css'
 
 function App() {
   const [rating,setRating] = useState(5);
+  const[name,setName] = useState("")
   const [comment,setComment]= useState("");
   const [feedback,setFeedBack] = useState([]);
 
   const handleSubmit = ()=>{
     let newFeedback = {
+      name:name,
       rating: rating,
       comment: comment,
     }
@@ -17,6 +19,7 @@ function App() {
     
     setFeedBack([...feedback,newFeedback])
     setRating(5);
+    setName("")
     setComment("");
   
    
@@ -59,13 +62,20 @@ function App() {
      onChange={handleStarChange}
     />
     <p className='rating'>{rating} (stars) </p>
+    
     <div className="textarea">
+      <div className='username'>
+          <label className='input-text'>Please enter your Name:</label>
+          <input value={name} onChange={(e)=>setName(e.target.value)} type="text" />
+      </div>
+
       <textarea placeholder="Comments" value={comment} onChange={handleChange} cols="30" rows="10"/>
       <button onClick={handleSubmit}>Submit</button>
     </div>
     
     {feedback.map((feedback, index) => (
           <div key={index} className="feedback-item">
+            <h3>{feedback.name}</h3>
               <ReactStars
                 count={5}
                 value={feedback.rating}
